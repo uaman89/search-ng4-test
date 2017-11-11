@@ -1,3 +1,13 @@
 <h1>
   {{title}}
 </h1>
+
+<div class="search">
+  <input [ngModel]="query" type="search" placeholder="enter text to find">
+  <select>
+    <option value="google">Google</option>
+    <option value="bing">Bing</option>
+    <option value="Ask">Ask</option>
+  </select>
+  <button>Search</button>
+</div>
