@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {URLSearchParams} from '@angular/http';
+
+declare function escape(s:string): string;
 
 interface SearchSystem {
   name: string;
@@ -48,7 +49,7 @@ export class AppComponent {
     }
 
     // go to search result:
-    const href = this.searchSystem.url + encodeURI(this.query);
+    const href = this.searchSystem.url + escape(this.query);
     window.location.href = href;
   }
 }
