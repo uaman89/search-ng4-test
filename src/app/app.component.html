@@ -3,11 +3,14 @@
 </h1>
 
 <div class="search">
-  <input [ngModel]="query" type="search" placeholder="enter text to find">
-  <select>
-    <option value="google">Google</option>
-    <option value="bing">Bing</option>
-    <option value="Ask">Ask</option>
+  <input [(ngModel)]="query" type="search" placeholder="enter text to find">
+  <select [(ngModel)]="searchSystem">
+    <option *ngFor="let searchSys of searchSystemList" [ngValue]="searchSys">{{ searchSys.name }}</option>
   </select>
-  <button>Search</button>
+  <button (click)="onSearchClick()">Search</button>
+</div>
+
+<div *ngIf="appError" class="error">
+  {{appError}}
+  <button (click)="appError=null">Hide this message</button>
 </div>
