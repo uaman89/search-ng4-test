@@ -14,16 +14,17 @@
 
     <button (click)="onSearchClick()" [disabled]="searchForm.invalid">Search</button>
 
-    <div class="error-hint">
-      <small *ngIf="name.invalid && name.touched">
-        The search query is required!
-      </small>
-      <small *ngIf="search.invalid && search.touched">
-        Please, select one of the search systems!
-      </small>
-    </div>
-
   </form>
+
+  <div class="error-hint">
+    <small *ngIf="name.invalid && name.touched">
+      The search query is required!
+    </small>
+    <small *ngIf="search.invalid && search.touched">
+      Please, select one of the search systems!
+    </small>
+  </div>
+
 </div>
 
 <div *ngIf="appError" class="app-error">
