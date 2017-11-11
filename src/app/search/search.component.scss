@@ -1,10 +1,17 @@
-.search{
+:host{
+  display: block;
   max-width:1024px;
   margin: 0 auto;
+}
+
+.search{
   border: 1px solid #ddd;
   padding: 2rem;
   border-radius: 1em;
 
+  &.faded {
+    opacity: 0.5;
+  }
 }
 
 form{
@@ -16,7 +23,6 @@ form{
 input[type=search]{
   display: flex;
   margin-right: auto;
-  /*width: auto;*/
   flex: 1;
 }
 
@@ -27,4 +33,18 @@ select{
 
 .ng-invalid{
   border: 1px solid red;
+}
+
+.error-hint small{
+  display: block;
+  color: red;
+}
+
+.app-error{
+  border: 1px #ad0000 solid;
+  background: #eec2cd;
+  text-align: center;
+  font-size:1.2em;
+  padding:1em;
+  margin-top: 2em;
 }
