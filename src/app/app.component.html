@@ -6,10 +6,12 @@
   <form #searchForm="ngForm">
 
     <input [(ngModel)]="query" #name="ngModel" name="query" required type="search" placeholder="enter text to find">
-    <select [(ngModel)]="searchSystem" #search="ngModel" name="search"  required>
+
+    <select [(ngModel)]="searchSystem" #search="ngModel" name="search" required>
       <option selected disabled hidden [value]="undefined">Please Choose...</option>
       <option *ngFor="let searchSys of searchSystemList" [ngValue]="searchSys">{{ searchSys.name }}</option>
     </select>
+
     <button (click)="onSearchClick()" [disabled]="searchForm.invalid">Search</button>
 
     <div class="error-hint">
@@ -26,5 +28,5 @@
 
 <div *ngIf="appError" class="app-error">
   {{appError}}
-  <button (click)="appError=null">Hide this message</button>
+  <button (click)="appError=null">Try again</button>
 </div>
